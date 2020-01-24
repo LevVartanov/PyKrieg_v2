@@ -27,12 +27,12 @@ def load_image(name, colorkey=None):
     return image
 
 
-# константы
+# Константы
 TANK_PASSABITILY = 1
 SHELL_PASSABILITY = 2
 GLOBAL_TIMER_EVENT = 30
 FPS = 50
-GAME_DURATION = 100
+GAME_DURATION = 120
 TANK_SPEED = 1
 SHELL_SPEED = 5
 ROTATION_SPEED = 5
@@ -648,6 +648,8 @@ while running:
         font2 = pygame.font.Font(None, 80)
         text = font2.render("Игра окончена", True, (255, 0, 0))
         screen.blit(text, (width // 2 - 200, height // 2 - 30))
+        pygame.mixer_music.stop()
+        tank_move_sound.stop()
     pygame.display.flip()
 else:
     pygame.quit()
